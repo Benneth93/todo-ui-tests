@@ -2,11 +2,11 @@ import {ChainablePromiseElement} from 'webdriverio'
 
 import Page from './page.js'
 
-class TodoPage extends Page{
+class TodosPage extends Page{
     
     public open () {
-        return super.open('todo');
+        return super.open('todos');
     }
 }
 
-export default new TodoPage();
+export default new TodosPage();
