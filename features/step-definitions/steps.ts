@@ -19,3 +19,12 @@ Then(/^The new todo dialog should open$/, async () => {(
     await expect(browser.$("#todoDescriptionTxt")).toBeExisting();
 });
 
+When(/^I enter details for a new todo$/, async ()=>{
+    await pages.todos.EnterNewTitle();
+    await pages.todos.EnterNewDescription();
+});
+
+Then(/^Click the save button$/, async ()=>{
+    await pages.todos.ClickSaveButton();
+});
+
