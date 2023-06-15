@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Tasks {
-  taskID Int @id @default(autoincrement())
-  title String
+  TaskID Int @id @default(autoincrement())
+  Title String
   Description String
 }

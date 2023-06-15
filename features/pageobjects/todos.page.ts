@@ -8,12 +8,12 @@ class TodosPage extends Page{
         return super.open('todos');
     }
 
-    public EnterNewTitle(){
-        return browser.$("#todoTitleTxt").setValue("webdriver.io");
+    public EnterNewTitle(titleIn: string){
+        return browser.$("#todoTitleTxt").setValue(`webdriver.io: ${titleIn}`);
     }
 
-    public EnterNewDescription(){
-        return browser.$("#todoDescriptionTxt").setValue("webdriver.io");
+    public EnterNewDescription(descriptionIn: string){
+        return browser.$("#todoDescriptionTxt").setValue(`webdriver.io: ${descriptionIn}`);
     }
 
     public ClickSaveButton(){
