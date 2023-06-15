@@ -1,9 +1,14 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 
 import TodosPage from '../pageobjects/todos.page.js'
+import TodoDatabaseService from '../../services/todo.database.service.js'
 
 const pages = {
     todos: TodosPage
+}
+
+const services = {
+    tododb: TodoDatabaseService
 }
 
 Given(/^I am on the (\w+) page$/, async (page) => {
@@ -28,3 +33,6 @@ Then(/^Click the save button$/, async ()=>{
     await pages.todos.ClickSaveButton();
 });
 
+Then(/^I check the todo exists in the database$/, async ()=>{
+    await services.tododb.getTodoIDByDetails("webdriver.io", "webdriver.io");
+});

@@ -6,3 +6,5 @@ Scenario:
     Then The new todo dialog should open
     When I enter details for a new todo
         And Click the save button
+    Then I check the todo exists in the database
+    

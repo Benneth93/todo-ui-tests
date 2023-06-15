@@ -9,11 +9,11 @@ class TodosPage extends Page{
     }
 
     public EnterNewTitle(){
-        return browser.$("#todoTitleTxt").setValue("webdriver.io title");
+        return browser.$("#todoTitleTxt").setValue("webdriver.io");
     }
 
     public EnterNewDescription(){
-        return browser.$("#todoDescriptionTxt").setValue("webdriver.io description");
+        return browser.$("#todoDescriptionTxt").setValue("webdriver.io");
     }
 
     public ClickSaveButton(){
