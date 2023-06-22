@@ -7,4 +7,5 @@ Scenario:
     When I enter details for a new todo
         And I Click the save button
     Then I check the todo exists in the database
+        And The todo card exists on the webpage
     

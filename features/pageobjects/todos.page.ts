@@ -20,6 +20,15 @@ class TodosPage extends Page{
         browser.$("#todoSaveBtn").waitForClickable();
         return browser.$("#todoSaveBtn").click();
     }
+
+    public async GetTodoCard(taskID: number){
+        var elements = await browser.$$(".todo-card");
+        
+        var card = await elements.find(async (e) => {
+            var id = await e.getAttribute("id");
+            return id === taskID.toString();
+        });
+    }
 }
 
 export default new TodosPage();
