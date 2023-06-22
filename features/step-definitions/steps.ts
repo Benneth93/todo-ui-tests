@@ -55,3 +55,9 @@ Then(/^I check the todo exists in the database$/, async ()=>{
     console.log(`Task saved to variables: ${testVariables.taskId}`);
 
 });
+
+Then(/^The todo card exists on the webpage$/, async ()=>{ 
+    var card = await pages.todos.GetTodoCard(testVariables.taskId);
+    expect(card).toBeDisplayed;
+});
+
