@@ -41,7 +41,7 @@ When(/^I enter details for a new todo$/, async ()=>{
     await pages.todos.EnterNewDescription(testVariables.description);
 });
 
-Then(/^Click the save button$/, async ()=>{
+When(/^I Click the save button$/, async ()=>{
     await pages.todos.ClickSaveButton();
 });
 
