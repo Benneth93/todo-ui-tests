@@ -34,8 +34,8 @@ Then(/^The new todo dialog should open$/, async () => {(
 
 When(/^I enter details for a new todo$/, async ()=>{
 
-    testVariables.title = services.stringTools.generateRandomString(10);
-    testVariables.description = services.stringTools.generateRandomString(10);
+    testVariables.title = `webdriver.io:  ${services.stringTools.generateRandomString(10)}`;
+    testVariables.description = `webdriver.io: ${services.stringTools.generateRandomString(10)}`;
 
     await pages.todos.EnterNewTitle(testVariables.title);
     await pages.todos.EnterNewDescription(testVariables.description);

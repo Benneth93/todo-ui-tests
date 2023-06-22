@@ -9,14 +9,15 @@ class TodosPage extends Page{
     }
 
     public EnterNewTitle(titleIn: string){
-        return browser.$("#todoTitleTxt").setValue(`webdriver.io: ${titleIn}`);
+        return browser.$("#todoTitleTxt").setValue(titleIn);
     }
 
     public EnterNewDescription(descriptionIn: string){
-        return browser.$("#todoDescriptionTxt").setValue(`webdriver.io: ${descriptionIn}`);
+        return browser.$("#todoDescriptionTxt").setValue(descriptionIn);
     }
 
     public ClickSaveButton(){
+        browser.$("#todoSaveBtn").waitForClickable();
         return browser.$("#todoSaveBtn").click();
     }
 }
