@@ -4,19 +4,19 @@ import Page from './page.js'
 
 class TodosPage extends Page{
     
-    public open () {
+    public async open () {
         return super.open('todos');
     }
 
-    public EnterNewTitle(titleIn: string){
+    public async EnterNewTitle(titleIn: string){
         return browser.$("#todoTitleTxt").setValue(titleIn);
     }
 
-    public EnterNewDescription(descriptionIn: string){
+    public async EnterNewDescription(descriptionIn: string){
         return browser.$("#todoDescriptionTxt").setValue(descriptionIn);
     }
 
-    public ClickSaveButton(){
+    public async ClickSaveButton(){
         browser.$("#todoSaveBtn").waitForClickable();
         return browser.$("#todoSaveBtn").click();
     }
@@ -24,9 +24,19 @@ class TodosPage extends Page{
     public async GetTodoCard(taskID: number){
         var elements = await browser.$$(".todo-card");
         
-        var card = await elements.find(async (e) => {
+        var card = elements.find(async (e) => {
             var id = await e.getAttribute("id");
             return id === taskID.toString();
+        });
+    }
+
+    public async ClickEditButton(taskID: number){
+        
+        var elements = await browser.$$(".todo-card");
+        var card = elements.find(async (e)=>{
+            if(taskID.toString() === await e.getAttribute("id")){
+                return await e.$(".card-edit-button").click();
+            };
         });
     }
 }

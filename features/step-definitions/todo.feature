@@ -8,4 +8,7 @@ Scenario:
         And I Click the save button
     Then I check the todo exists in the database
         And The todo card exists on the webpage
+    When I click the edit button
+    Then The edit dialog should open
+    
     
