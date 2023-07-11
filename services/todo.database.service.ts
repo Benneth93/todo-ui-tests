@@ -1,4 +1,5 @@
 import {PrismaClient} from '@prisma/client'
+import { DataTable } from '@wdio/cucumber-framework';
 
 const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 150;
@@ -13,7 +14,7 @@ class TodoDatabaseService {
 
         while (retryCount < MAX_RETRIES){
             try{
-            const task = await prisma.Tasks.findMany({
+            const task = await prisma.tasks.findMany({
                 select:{
                     TaskID: true,
                 },

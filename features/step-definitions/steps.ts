@@ -53,7 +53,7 @@ Then(/^I check the todo exists in the database$/, async ()=>{
     expect(taskID).toBeDefined();    
     expect(taskID).toBeGreaterThan(0);
         
-    testVariables.taskId = taskID;
+    testVariables.taskId = Number(taskID);
     console.log(`Task saved to variables: ${testVariables.taskId}`);
 
 });
@@ -70,6 +70,9 @@ When(/^I click the edit button$/, async ()=>{
 When(/^The edit dialog should open$/, async ()=>{
     console.log("hello");
 });
+
+
+
 
 function sleep(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
